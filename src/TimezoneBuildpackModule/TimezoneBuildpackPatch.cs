@@ -3,7 +3,7 @@ using HarmonyLib;
 
 namespace TimezoneBuildpackModule
 {
-    [HarmonyPatch(typeof(DateTime), nameof(DateTime.Now), new Type[0])]
+    [HarmonyPatch(typeof(DateTime), "get_Now", new Type[0])]
     public class MyPatch
     {
         static bool Prefix(ref DateTime __result)
